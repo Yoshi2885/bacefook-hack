@@ -9,11 +9,11 @@
   bacefook.newsfeed = [];
   bacefook.friends = {};
   bacefook.friendNames = ["tamaroh", "kani", "eriko", "tsubasa", "masataka"];
-  bacefook.friendNames.forEach(name => {
+  bacefook.friendNames.forEach((name) => {
     bacefook.friends[name] = [];
   });
 
-  const getRandomElement = array => {
+  const getRandomElement = (array) => {
     // Given an array, returns a random element
     const randomIndex = Math.floor(Math.random() * array.length);
     return array[randomIndex];
@@ -29,7 +29,7 @@
     "a salaryman",
     "yesterday I",
     "a ninja",
-    "my boss"
+    "my boss",
   ];
   const verbs = [
     "ate",
@@ -48,7 +48,7 @@
     "ran to",
     "worked on",
     "slept on",
-    "slept in"
+    "slept in",
   ];
   const fillers = [
     "my",
@@ -64,7 +64,7 @@
     "",
     "the best",
     "the greatest",
-    "a delightful"
+    "a delightful",
   ];
   const nouns = [
     "DIG",
@@ -89,7 +89,7 @@
     "unicorn",
     "mess",
     "pirate ship",
-    "ninja"
+    "ninja",
   ];
   const hashtags = [
     "#DIG",
@@ -104,21 +104,47 @@
     "#hashtags",
     "#japanlife",
     "#oops",
-    ""
+    "",
   ];
   const feelings = [
-    "happy",
-    "smug",
-    "lovestruck",
-    "gross",
-    "scared",
-    "tired",
-    "angry",
-    "frustrated",
-    "excited",
-    ""
+    "happy😃",
+    "smug😏",
+    "lovestruck💘",
+    "gross🤢",
+    "scared😱",
+    "tired😫",
+    "angry😠",
+    "frustrated👿",
+    "excited🤩",
   ];
-  const images = [];
+  const images = [
+    "./images/cat_fig.jpeg",
+    "./images/cat_punch.jpeg",
+    "./images/laugh_cat.jpeg",
+    "./images/sleep_cat.jpeg",
+    "./images/cat_with_glasses.jpeg",
+    "./images/cute_baby_cat.jpeg",
+    "./images/in_the_box_cat.jpeg",
+    "./images/two_cats.jpeg",
+    "./images/two_black_cats.jpeg",
+    "./images/looking_up_cat.jpeg",
+    "./images/lay_cat.jpeg",
+    "./images/laugh_cat.jpeg",
+    "./images/cat_fig.jpeg",
+    "./images/cat_punch.jpeg",
+    "./images/laugh_cat.jpeg",
+    "./images/sleep_cat.jpeg",
+    "./images/cat_with_glasses.jpeg",
+    "./images/cute_baby_cat.jpeg",
+    "./images/in_the_box_cat.jpeg",
+    "./images/two_cats.jpeg",
+    "./images/two_black_cats.jpeg",
+    "./images/sleep_cat.jpeg",
+    "./images/looking_up_cat.jpeg",
+    "./images/lay_cat.jpeg",
+    "./images/laugh_cat.jpeg",
+    "./images/okonomiyaki.jpeg",
+  ];
 
   const generateRandomText = () => {
     return [
@@ -126,11 +152,11 @@
       getRandomElement(verbs),
       getRandomElement(fillers),
       getRandomElement(nouns),
-      getRandomElement(hashtags)
+      getRandomElement(hashtags),
     ].join(" ");
   };
 
-  const generatePostObj = timeOffset => {
+  const generatePostObj = (timeOffset) => {
     // if an offset is provided, make the timestamp that much older, otherwise just use the current time
     const timestamp = timeOffset
       ? new Date(new Date().getTime() - timeOffset)
@@ -141,17 +167,32 @@
       text: generateRandomText(),
       feeling: getRandomElement(feelings),
       image: getRandomElement(images),
-      timestamp
+      timestamp,
     };
   };
 
-  const addPost = obj => {
+  // const generatePostObj = (timeOffset) => {
+  //   // if an offset is provided, make the timestamp that much older, otherwise just use the current time
+  //   const timestamp = timeOffset
+  //     ? new moment(new Date().getTime() - timeOffset).fromNow()
+  //     : new moment().fromNow();
+
+  //   return {
+  //     friend: getRandomElement(bacefook.friendNames),
+  //     text: generateRandomText(),
+  //     feeling: getRandomElement(feelings),
+  //     image: getRandomElement(images),
+  //     timestamp,
+  //   };
+  // };
+
+  const addPost = (obj) => {
     const friend = obj.friend;
     bacefook.friends[friend].push(obj);
     bacefook.newsfeed.push(obj);
   };
 
-  const createPost = timeOffset => {
+  const createPost = (timeOffset) => {
     const newPost = generatePostObj(timeOffset);
     addPost(newPost);
   };
@@ -163,6 +204,7 @@
   }
 
   const scheduler = () => {
+    console.log(`make_new_post`);
     createPost(null);
     setTimeout(scheduler, (3 + Math.random() * 5) * 1000); // generate a new post every 3 to 8 seconds
   };

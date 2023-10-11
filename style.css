@@ -1,0 +1,90 @@
+body {
+  background-color: rgb(235, 233, 233);
+}
+
+.header {
+  color: white;
+  text-align: center;
+  background-color: #3b5998;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  padding-top: 15px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+}
+
+.main-contents {
+  margin-top: 5px;
+  margin-bottom: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 300px;
+}
+
+#comment {
+  width: 300px;
+  resize: none;
+}
+
+#emoji {
+  width: 150px;
+}
+
+#button {
+  display: inline;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post {
+  border-radius: 15px;
+  background-color: rgb(251, 251, 251);
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  padding-top: 15px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+}
+
+.friend {
+  text-align: right;
+  color: rgb(181, 181, 181);
+  font-weight: 600;
+}
+
+.feeling {
+  display: block;
+  color: #3b5998;
+}
+
+.timeStamp {
+  color: gray;
+  font-size: 50%;
+}
+
+.form {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.form-box {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#name {
+  text-align: center;
+  display: none;
+}
+
+p {
+  margin: 0;
+}
