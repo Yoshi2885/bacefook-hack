@@ -1,11 +1,19 @@
 body {
   background-color: rgb(235, 233, 233);
+  background-image: url("./images/miteru.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: left bottom;
   transition: all 0.5s;
 }
 
-body .dark-mode {
+body.dark-mode {
   background-color: rgb(83, 83, 83);
   color: #c8c8c8;
+  background-image: url("./images/cateye.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: left bottom;
   transition: all 0.5s;
 }
 
@@ -237,7 +245,8 @@ img {
 #popup-inside {
   width: 400px;
   background-color: #ffffff85;
-  margin: 30% auto;
+  margin: auto;
+  margin-top: 15%;
   padding: 30px;
   position: relative;
   border: 1px solid #cdcdcd;
