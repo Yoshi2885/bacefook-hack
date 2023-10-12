@@ -127,7 +127,7 @@ function tweet() {
   };
   bacefook.newsfeed.push(newMyPost);
   document.getElementById("comment").value = "";
-  document.getElementById("emoji").value = "happy😃";
+  document.getElementById("emoji").value = "😃happy😃";
 }
 
 function actionToggle() {
