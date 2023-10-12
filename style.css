@@ -14,6 +14,7 @@ body .dark-mode {
   left: 50%;
   top: 80px;
   margin-top: 0;
+  z-index: 100;
   transform: translateX(-50%) translateY(-50%);
   color: white;
   text-align: center;
@@ -29,7 +30,7 @@ body .dark-mode {
   transition: all 0.5s;
 }
 .headerB {
-  z-index: -1;
+  z-index: -2;
   height: 150px;
   width: 500px;
   color: rgba(255, 255, 255, 0);
@@ -153,6 +154,7 @@ img {
 #popup-wrapper {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
+  z-index: 200;
   top: 0;
   left: 0;
   width: 100%;
@@ -174,4 +176,59 @@ img {
   right: 20px;
   cursor: pointer;
   font-size: large;
+}
+
+.dark-mode-checkbox {
+  display: flex;
+  z-index: 0;
+  align-items: center;
+  position: relative;
+  margin: auto;
+  width: 100px;
+  height: 50px;
+  border-radius: 50px;
+  box-sizing: content-box;
+  background-color: #f5da5233;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.dark-mode-checkbox:has(:checked) {
+  background-color: #8c8c8c33;
+}
+
+.dark-mode-checkbox::before {
+  position: absolute;
+  left: 5px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #f5da52;
+  content: "";
+  transition: left 0.4s;
+}
+
+.dark-mode-checkbox:has(:checked)::before {
+  left: 50px;
+  background-color: #8c8c8c;
+}
+
+.dark-mode-checkbox::after {
+  position: absolute;
+  left: 26px;
+  transform: translateX(-50%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9em;
+  content: "💡";
+  transition: left 0.4s;
+}
+
+.dark-mode-checkbox:has(:checked)::after {
+  left: 71px;
+  content: "🌙";
+}
+
+.dark-mode-checkbox input {
+  display: none;
 }
