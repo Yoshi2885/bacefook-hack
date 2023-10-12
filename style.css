@@ -1,5 +1,11 @@
 body {
   background-color: rgb(235, 233, 233);
+  transition: all 0.5s;
+}
+
+body .dark-mode {
+  background-color: rgb(83, 83, 83);
+  transition: all 0.5s;
 }
 
 .header {
@@ -14,6 +20,7 @@ body {
   padding-right: 25px;
   padding-bottom: 15px;
   padding-left: 25px;
+  transition: all 0.5s;
 }
 
 .main-contents {
@@ -40,9 +47,15 @@ body {
   margin-right: auto;
 }
 
+.dark-mode-checkbox {
+  display: block;
+  text-align: center;
+}
+
 .post {
-  border-radius: 15px;
   background-color: rgb(251, 251, 251);
+  color: black;
+  border-radius: 15px;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
@@ -51,22 +64,38 @@ body {
   padding-right: 25px;
   padding-bottom: 15px;
   padding-left: 25px;
+  transition: all 0.5s;
+}
+
+.dark-mode {
+  background-color: rgb(46, 46, 46);
+  color: aliceblue;
+  transition: all 0.5s;
 }
 
 .friend {
   text-align: right;
   color: rgb(181, 181, 181);
   font-weight: 600;
+  transition: all 0.5s;
+}
+
+img {
+  display: block;
+  margin: auto;
+  transition: all 0.5s;
 }
 
 .feeling {
   display: block;
   color: #3b5998;
+  transition: all 0.5s;
 }
 
 .timeStamp {
   color: gray;
   font-size: 50%;
+  transition: all 0.5s;
 }
 
 .form {
@@ -83,8 +112,4 @@ body {
 #name {
   text-align: center;
   display: none;
-}
-
-p {
-  margin: 0;
 }

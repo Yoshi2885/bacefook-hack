@@ -129,21 +129,6 @@
     "./images/two_black_cats.jpeg",
     "./images/looking_up_cat.jpeg",
     "./images/lay_cat.jpeg",
-    "./images/laugh_cat.jpeg",
-    "./images/cat_fig.jpeg",
-    "./images/cat_punch.jpeg",
-    "./images/laugh_cat.jpeg",
-    "./images/sleep_cat.jpeg",
-    "./images/cat_with_glasses.jpeg",
-    "./images/cute_baby_cat.jpeg",
-    "./images/in_the_box_cat.jpeg",
-    "./images/two_cats.jpeg",
-    "./images/two_black_cats.jpeg",
-    "./images/sleep_cat.jpeg",
-    "./images/looking_up_cat.jpeg",
-    "./images/lay_cat.jpeg",
-    "./images/laugh_cat.jpeg",
-    "./images/okonomiyaki.jpeg",
   ];
 
   const generateRandomText = () => {
@@ -170,21 +155,6 @@
       timestamp,
     };
   };
-
-  // const generatePostObj = (timeOffset) => {
-  //   // if an offset is provided, make the timestamp that much older, otherwise just use the current time
-  //   const timestamp = timeOffset
-  //     ? new moment(new Date().getTime() - timeOffset).fromNow()
-  //     : new moment().fromNow();
-
-  //   return {
-  //     friend: getRandomElement(bacefook.friendNames),
-  //     text: generateRandomText(),
-  //     feeling: getRandomElement(feelings),
-  //     image: getRandomElement(images),
-  //     timestamp,
-  //   };
-  // };
 
   const addPost = (obj) => {
     const friend = obj.friend;

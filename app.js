@@ -51,39 +51,77 @@ window.addEventListener("load", () => {
 
 function reload() {
   // containerの要素を一回削除
-  const containerEl = document.querySelector("#newsfeed");
-  containerEl.innerHTML = "";
-  for (let index = bacefook.newsfeed.length - 1; index >= 0; index--) {
-    const post = bacefook.newsfeed[index];
+  // flag確認
+  let isDarkMode = document.getElementById("dark-mode").checked;
+  console.log("darkmode?", isDarkMode);
+  if (isDarkMode) {
+    const containerEl = document.querySelector("#newsfeed");
+    containerEl.innerHTML = "";
+    for (let index = bacefook.newsfeed.length - 1; index >= 0; index--) {
+      const post = bacefook.newsfeed[index];
 
-    const friendEl = document.createElement("div");
-    friendEl.className = "friend";
-    friendEl.innerText = post.friend;
+      const friendEl = document.createElement("div");
+      friendEl.className = "friend dark-mode";
+      friendEl.innerText = post.friend;
 
-    const timeStampEl = document.createElement("div");
-    timeStampEl.className = "timeStamp";
-    timeStampEl.innerText = moment(post.timestamp).fromNow();
+      const timeStampEl = document.createElement("div");
+      timeStampEl.className = "timeStamp dark-mode";
+      timeStampEl.innerText = moment(post.timestamp).fromNow();
 
-    const feelingEl = document.createElement("div");
-    feelingEl.className = "feeling";
-    feelingEl.innerText = post.feeling;
+      const feelingEl = document.createElement("div");
+      feelingEl.className = "feeling dark-mode";
+      feelingEl.innerText = post.feeling;
 
-    const postEl = document.createElement("div");
-    postEl.className = "post";
-    postEl.innerText = post.text;
+      const postEl = document.createElement("div");
+      postEl.className = "post dark-mode";
+      postEl.innerText = post.text;
 
-    const img_element = document.createElement("img");
-    img_element.src = post.image;
-    img_element.alt = "cute cat";
-    img_element.width = 200;
+      const img_element = document.createElement("img");
+      img_element.src = post.image;
+      img_element.alt = "cute cat";
+      img_element.width = 200;
 
-    postEl.append(friendEl);
-    postEl.append(img_element);
-    postEl.append(feelingEl);
-    postEl.append(timeStampEl);
-    containerEl.append(postEl);
+      postEl.append(friendEl);
+      postEl.append(img_element);
+      postEl.append(feelingEl);
+      postEl.append(timeStampEl);
+      containerEl.append(postEl);
+    }
+  } else {
+    const containerEl = document.querySelector("#newsfeed");
+    containerEl.innerHTML = "";
+    for (let index = bacefook.newsfeed.length - 1; index >= 0; index--) {
+      const post = bacefook.newsfeed[index];
+
+      const friendEl = document.createElement("div");
+      friendEl.className = "friend";
+      friendEl.innerText = post.friend;
+
+      const timeStampEl = document.createElement("div");
+      timeStampEl.className = "timeStamp";
+      timeStampEl.innerText = moment(post.timestamp).fromNow();
+
+      const feelingEl = document.createElement("div");
+      feelingEl.className = "feeling";
+      feelingEl.innerText = post.feeling;
+
+      const postEl = document.createElement("div");
+      postEl.className = "post";
+      postEl.innerText = post.text;
+
+      const img_element = document.createElement("img");
+      img_element.src = post.image;
+      img_element.alt = "cute cat";
+      img_element.width = 200;
+
+      postEl.append(friendEl);
+      postEl.append(img_element);
+      postEl.append(feelingEl);
+      postEl.append(timeStampEl);
+      containerEl.append(postEl);
+    }
   }
-  setTimeout(reload, 2000);
+  setTimeout(reload, 1000);
   console.log("reload");
 }
 
@@ -102,7 +140,18 @@ function tweet() {
   };
   bacefook.newsfeed.push(newMyPost);
   document.getElementById("comment").value = "";
-  document.getElementById("emoji").value = "";
+  document.getElementById("emoji").value = "happy😃";
 }
 
 button.addEventListener("click", tweet);
+
+function actionToggle() {
+  let darkModeCheck = document.getElementsByClassName("post");
+  for (const element of darkModeCheck) {
+    element.classList.toggle("dark-mode");
+  }
+  document.getElementsByClassName("body")[0].classList.toggle("dark-mode");
+}
+
+let saveCheckbox = document.getElementById("dark-mode");
+saveCheckbox.addEventListener("change", actionToggle);

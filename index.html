@@ -6,7 +6,7 @@
     <title>DIG Bacefook Newsfeed</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="body">
     <div class="header">
       <h1>Bacefook Newsfeed</h1>
       <h2 id="wellcome"></h2>
@@ -18,7 +18,6 @@
           placeholder="今何してる？"
         ></textarea>
         <div class="feeling">
-          <!-- <input class="form-box" id="emoji" placeholder="気分上々？" /> -->
           <select id="emoji">
             <option>happy😃</option>
             <option>smug😏</option>
@@ -33,6 +32,10 @@
           <input type="button" value="投稿" id="button" />
         </div>
       </div>
+    </div>
+    <div class="dark-mode-checkbox">
+      <input type="checkbox" id="dark-mode" name="dark-mode" />
+      <label for="dark-mode">休憩しますか？☕️</label>
     </div>
     <div id="newsfeed"></div>
     <script src="moment.js"></script>
