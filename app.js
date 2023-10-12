@@ -53,7 +53,6 @@ function reload() {
   // containerの要素を一回削除
   // flag確認
   let isDarkMode = document.getElementById("dark-mode").checked;
-  console.log("darkmode?", isDarkMode);
   if (isDarkMode) {
     const containerEl = document.querySelector("#newsfeed");
     containerEl.innerHTML = "";
@@ -122,7 +121,6 @@ function reload() {
     }
   }
   setTimeout(reload, 1000);
-  console.log("reload");
 }
 
 reload();
@@ -151,6 +149,7 @@ function actionToggle() {
     element.classList.toggle("dark-mode");
   }
   document.getElementsByClassName("body")[0].classList.toggle("dark-mode");
+  document.getElementsByClassName("header")[0].classList.toggle("dark-mode");
 }
 
 let saveCheckbox = document.getElementById("dark-mode");

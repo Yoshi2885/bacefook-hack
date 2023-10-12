@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="body">
-    <div class="header">
+    <header class="header">
       <h1>Bacefook Newsfeed</h1>
       <h2 id="wellcome"></h2>
       <div class="main-contents">
@@ -32,12 +32,25 @@
           <input type="button" value="投稿" id="button" />
         </div>
       </div>
-    </div>
-    <div class="dark-mode-checkbox">
+    </header>
+    <!-- <div class="dark-mode-checkbox">
       <input type="checkbox" id="dark-mode" name="dark-mode" />
-      <label for="dark-mode">休憩しますか？☕️</label>
+      <label for="dark-mode"></label>
+    </div> -->
+    <label class="dark-mode-checkbox"
+      ><input type="checkbox" id="dark-mode" name="dark-mode"
+    /></label>
+    <main id="newsfeed"></main>
+    <div class="hide-menu">
+      <button class="btn-menu">投稿画面</button>
+      <nav class="nav">
+        <ul>
+          <li><a href="#">ダミー投稿部分</a></li>
+          <li><a href="#">ダミー気分</a></li>
+          <li><a href="#">ダミー投稿ボタン</a></li>
+        </ul>
+      </nav>
     </div>
-    <div id="newsfeed"></div>
     <script src="moment.js"></script>
     <script src="dataGenerator.js"></script>
     <script src="app.js"></script>

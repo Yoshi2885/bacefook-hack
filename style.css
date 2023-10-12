@@ -4,6 +4,7 @@ body {
 }
 
 body .dark-mode {
+  color: rgb(217, 217, 218);
   background-color: rgb(83, 83, 83);
   transition: all 0.5s;
 }
@@ -21,6 +22,10 @@ body .dark-mode {
   padding-bottom: 15px;
   padding-left: 25px;
   transition: all 0.5s;
+}
+
+.header.dark-mode {
+  background-color: #18233a;
 }
 
 .main-contents {
@@ -47,9 +52,64 @@ body .dark-mode {
   margin-right: auto;
 }
 
-.dark-mode-checkbox {
+/* .dark-mode-checkbox {
   display: block;
   text-align: center;
+} */
+
+.dark-mode-checkbox {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;
+  position: relative;
+  width: 100px;
+  height: 50px;
+  border-radius: 50px;
+  box-sizing: content-box;
+  background-color: #faea6e33;
+  cursor: pointer;
+  transition: background-color 0.4s;
+}
+
+.dark-mode-checkbox:has(:checked) {
+  background-color: #8c8c8c15;
+}
+
+.dark-mode-checkbox::before {
+  position: absolute;
+  left: 5px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #faea6e;
+  content: "";
+  transition: left 0.4s;
+}
+
+.dark-mode-checkbox:has(:checked)::before {
+  left: 50px;
+  background-color: #8c8c8c;
+}
+
+.dark-mode-checkbox::after {
+  position: absolute;
+  left: 26px;
+  transform: translateX(-50%);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9em;
+  content: "💡";
+  transition: left 0.4s;
+}
+
+.dark-mode-checkbox:has(:checked)::after {
+  left: 71px;
+  content: "🌙";
+}
+
+.dark-mode-checkbox input {
+  display: none;
 }
 
 .post {
