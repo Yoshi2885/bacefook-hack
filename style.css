@@ -28,7 +28,7 @@ body.dark-mode {
   color: white;
   text-align: center;
   background-color: #3b5998;
-  width: 500px;
+  width: 100%;
   padding-top: 15px;
   padding-right: 25px;
   padding-bottom: 15px;
@@ -147,6 +147,7 @@ body.dark-mode {
 
 .friend {
   text-align: right;
+  background: none;
   color: rgb(181, 181, 181);
   font-weight: 600;
   transition: all 0.5s;
@@ -160,16 +161,19 @@ img {
 
 .feeling {
   display: block;
+  background: none;
   color: #3b5998;
   transition: all 0.5s;
 }
 
 .feeling.dark-mode {
   color: #97a8cb;
+  background: none;
 }
 
 .timeStamp {
   color: gray;
+  background: none;
   font-size: 50%;
   transition: all 0.5s;
 }
