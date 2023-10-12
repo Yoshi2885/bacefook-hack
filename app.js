@@ -1,17 +1,3 @@
-//ボタンクリック時にポップアップを表示させる
-const clickBtn = document.getElementById("click-btn");
-const popupWrapper = document.getElementById("popup-wrapper");
-const close = document.getElementById("close");
-//const people1 = document.getElementById('arrList');
-clickBtn.addEventListener("click", () => {
-  popupWrapper.style.display = "block";
-});
-// ポップアップの外側又は「x」のマークをクリックしたときポップアップを閉じる
-popupWrapper.addEventListener("click", (e) => {
-  if (e.target.id === popupWrapper.id || e.target.id === close.id) {
-    popupWrapper.style.display = "none";
-  }
-});
 window.addEventListener("load", () => {
   // This is a check to see if there's a username stored
   let username = localStorage.getItem("username");
@@ -50,14 +36,11 @@ window.addEventListener("load", () => {
     containerEl.append(postEl);
   }
 });
-// let button = document.getElementById("btn");
-// button.addEventListener("click", scheduler, false);
-// 自動的にcontainer内の内容が更新されるような記述がないかを考える。か、再描画ボタンを作成する。
+
 function reload() {
   // containerの要素を一回削除
   // flag確認
   let isDarkMode = document.getElementById("dark-mode").checked;
-  console.log("darkmode?", isDarkMode);
   if (isDarkMode) {
     const containerEl = document.querySelector("#newsfeed");
     containerEl.innerHTML = "";
@@ -114,9 +97,23 @@ function reload() {
     }
   }
   setTimeout(reload, 1000);
-  console.log("reload");
 }
-reload();
+
+//ボタンクリック時にポップアップを表示させる
+const clickBtn = document.getElementById("click-btn");
+const popupWrapper = document.getElementById("popup-wrapper");
+const close = document.getElementById("close");
+//const people1 = document.getElementById('arrList');
+clickBtn.addEventListener("click", () => {
+  popupWrapper.style.display = "block";
+});
+// ポップアップの外側又は「x」のマークをクリックしたときポップアップを閉じる
+popupWrapper.addEventListener("click", (e) => {
+  if (e.target.id === popupWrapper.id || e.target.id === close.id) {
+    popupWrapper.style.display = "none";
+  }
+});
+
 function tweet() {
   const name = document.getElementById("name").value;
   const comment = document.getElementById("comment").value;
@@ -130,15 +127,33 @@ function tweet() {
   };
   bacefook.newsfeed.push(newMyPost);
   document.getElementById("comment").value = "";
-  document.getElementById("emoji").value = "happy:スマイリー:";
+  document.getElementById("emoji").value = "happy😃";
 }
-button.addEventListener("click", tweet);
+
 function actionToggle() {
   let darkModeCheck = document.getElementsByClassName("post");
   for (const element of darkModeCheck) {
     element.classList.toggle("dark-mode");
   }
   document.getElementsByClassName("body")[0].classList.toggle("dark-mode");
+  document.getElementsByClassName("header")[0].classList.toggle("dark-mode");
+  document.getElementById("click-btn").classList.toggle("dark-mode");
+  document.getElementById("go-to-top").classList.toggle("dark-mode");
 }
+
+function goToTop() {
+  window.scroll({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+reload();
+
+button.addEventListener("click", tweet);
 let saveCheckbox = document.getElementById("dark-mode");
+
 saveCheckbox.addEventListener("change", actionToggle);
+
+const goToTopBtn = document.getElementById("go-to-top");
+goToTopBtn.addEventListener("click", goToTop);

@@ -2,15 +2,16 @@ body {
   background-color: rgb(235, 233, 233);
   transition: all 0.5s;
 }
+
 body .dark-mode {
   background-color: rgb(83, 83, 83);
+  color: #c8c8c8;
   transition: all 0.5s;
 }
+
 .header {
   /* ヘッダー固定 */
   position: fixed;
-  /* height: 100px; */
-  /* width: 400px; */
   left: 50%;
   top: 80px;
   margin-top: 0;
@@ -19,9 +20,6 @@ body .dark-mode {
   color: white;
   text-align: center;
   background-color: #3b5998;
-  /* margin-top: 20px; */
-  /* margin-left: auto;
-  margin-right: auto; */
   width: 500px;
   padding-top: 15px;
   padding-right: 25px;
@@ -29,6 +27,11 @@ body .dark-mode {
   padding-left: 25px;
   transition: all 0.5s;
 }
+
+.header.dark-mode {
+  background-color: #162036;
+}
+
 .headerB {
   z-index: -2;
   height: 150px;
@@ -45,6 +48,7 @@ body .dark-mode {
   padding-left: 25px;
   transition: all 0.5s;
 }
+
 .headerT {
   /* ヘッダー固定 */
   z-index: -1;
@@ -62,6 +66,7 @@ body .dark-mode {
   padding-left: 25px;
   transition: all 0.5s;
 }
+
 .main-contents {
   margin-top: 5px;
   margin-bottom: 0;
@@ -69,23 +74,28 @@ body .dark-mode {
   margin-left: auto;
   width: 300px;
 }
+
 #comment {
   width: 300px;
   resize: none;
 }
+
 #emoji {
   width: 150px;
 }
+
 #button {
   display: inline;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
 }
+
 .dark-mode-checkbox {
   display: block;
   text-align: center;
 }
+
 .post {
   background-color: rgb(251, 251, 251);
   color: black;
@@ -100,45 +110,59 @@ body .dark-mode {
   padding-left: 25px;
   transition: all 0.5s;
 }
+
 .dark-mode {
   background-color: rgb(46, 46, 46);
   color: aliceblue;
   transition: all 0.5s;
 }
+
 .friend {
   text-align: right;
   color: rgb(181, 181, 181);
   font-weight: 600;
   transition: all 0.5s;
 }
+
 img {
   display: block;
   margin: auto;
   transition: all 0.5s;
 }
+
 .feeling {
   display: block;
   color: #3b5998;
   transition: all 0.5s;
 }
+
+.feeling.dark-mode {
+  color: #97a8cb;
+}
+
 .timeStamp {
   color: gray;
   font-size: 50%;
   transition: all 0.5s;
 }
+
 .form {
   margin-top: 5px;
   text-align: center;
+  transition: 0.5s;
 }
+
 .form-box {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
+
 #name {
   text-align: center;
   display: none;
 }
+
 .fixed_btn {
   position: fixed;
   bottom: 10px;
@@ -149,7 +173,35 @@ img {
   color: #ffffff;
   border-color: #3b589800;
   background-color: #3b5998;
+  transition: all 0.5s;
 }
+
+.fixed_btn.dark-mode {
+  background-color: #162036;
+}
+
+.go-to-top {
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+  padding: 10px 15px;
+  border-radius: 50%;
+  color: #ffffff;
+  border-color: #3b589800;
+  background-color: #82868e;
+  transition: 0.5s;
+}
+
+.go-to-top:hover {
+  cursor: pointer;
+  background-color: #3b5998;
+  transition: 0.5s;
+}
+
+.go-to-top.dark-mode:hover {
+  background-color: #162036;
+}
+
 /* ポップアップ */
 #popup-wrapper {
   background-color: rgba(0, 0, 0, 0.5);
@@ -161,6 +213,7 @@ img {
   height: 100%;
   display: none;
 }
+
 #popup-inside {
   width: 100%;
   max-width: 300px;
@@ -170,6 +223,7 @@ img {
   position: relative;
   border-radius: 20px;
 }
+
 #close {
   position: absolute;
   top: 5px;
