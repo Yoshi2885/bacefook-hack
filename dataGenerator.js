@@ -107,15 +107,15 @@
     "",
   ];
   const feelings = [
-    "happy😃",
-    "smug😏",
-    "lovestruck💘",
-    "gross🤢",
-    "scared😱",
-    "tired😫",
-    "angry😠",
-    "frustrated👿",
-    "excited🤩",
+    "😃happy😃",
+    "😏smug😏",
+    "💘lovestruck💘",
+    "🤢gross🤢",
+    "😱scared😱",
+    "😫tired😫",
+    "😠angry😠",
+    "👿frustrated👿",
+    "🤩excited🤩",
   ];
   const images = [
     "./images/cat_fig.jpeg",
