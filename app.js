@@ -1,3 +1,17 @@
+//ボタンクリック時にポップアップを表示させる
+const clickBtn = document.getElementById("click-btn");
+const popupWrapper = document.getElementById("popup-wrapper");
+const close = document.getElementById("close");
+//const people1 = document.getElementById('arrList');
+clickBtn.addEventListener("click", () => {
+  popupWrapper.style.display = "block";
+});
+// ポップアップの外側又は「x」のマークをクリックしたときポップアップを閉じる
+popupWrapper.addEventListener("click", (e) => {
+  if (e.target.id === popupWrapper.id || e.target.id === close.id) {
+    popupWrapper.style.display = "none";
+  }
+});
 window.addEventListener("load", () => {
   // This is a check to see if there's a username stored
   let username = localStorage.getItem("username");
@@ -8,35 +22,27 @@ window.addEventListener("load", () => {
   }
   document.getElementById("name").value = username;
   document.getElementById("wellcome").innerText = `ようこそ ${username} さん！`;
-
   const containerEl = document.querySelector("#newsfeed");
-
   // This makes things appear
   for (let index = bacefook.newsfeed.length - 1; index >= 0; index--) {
     const post = bacefook.newsfeed[index];
-
     const friendEl = document.createElement("div");
     friendEl.className = "friend";
     friendEl.innerText = post.friend;
-
     const timeStampEl = document.createElement("div");
     timeStampEl.className = "timeStamp";
     timeStampEl.innerText = moment(post.timestamp).fromNow();
-
     const feelingEl = document.createElement("div");
     feelingEl.className = "feeling";
     feelingEl.innerText = post.feeling;
-
     const postEl = document.createElement("div");
     postEl.className = "post";
     postEl.innerText = post.text;
-
     const img_element = document.createElement("img");
     img_element.src = post.image;
     img_element.className = "img";
     img_element.alt = "cute cat";
     img_element.width = 200;
-
     postEl.append(friendEl);
     postEl.append(img_element);
     postEl.append(feelingEl);
@@ -44,42 +50,35 @@ window.addEventListener("load", () => {
     containerEl.append(postEl);
   }
 });
-
 // let button = document.getElementById("btn");
 // button.addEventListener("click", scheduler, false);
 // 自動的にcontainer内の内容が更新されるような記述がないかを考える。か、再描画ボタンを作成する。
-
 function reload() {
   // containerの要素を一回削除
   // flag確認
   let isDarkMode = document.getElementById("dark-mode").checked;
+  console.log("darkmode?", isDarkMode);
   if (isDarkMode) {
     const containerEl = document.querySelector("#newsfeed");
     containerEl.innerHTML = "";
     for (let index = bacefook.newsfeed.length - 1; index >= 0; index--) {
       const post = bacefook.newsfeed[index];
-
       const friendEl = document.createElement("div");
       friendEl.className = "friend dark-mode";
       friendEl.innerText = post.friend;
-
       const timeStampEl = document.createElement("div");
       timeStampEl.className = "timeStamp dark-mode";
       timeStampEl.innerText = moment(post.timestamp).fromNow();
-
       const feelingEl = document.createElement("div");
       feelingEl.className = "feeling dark-mode";
       feelingEl.innerText = post.feeling;
-
       const postEl = document.createElement("div");
       postEl.className = "post dark-mode";
       postEl.innerText = post.text;
-
       const img_element = document.createElement("img");
       img_element.src = post.image;
       img_element.alt = "cute cat";
       img_element.width = 200;
-
       postEl.append(friendEl);
       postEl.append(img_element);
       postEl.append(feelingEl);
@@ -91,28 +90,22 @@ function reload() {
     containerEl.innerHTML = "";
     for (let index = bacefook.newsfeed.length - 1; index >= 0; index--) {
       const post = bacefook.newsfeed[index];
-
       const friendEl = document.createElement("div");
       friendEl.className = "friend";
       friendEl.innerText = post.friend;
-
       const timeStampEl = document.createElement("div");
       timeStampEl.className = "timeStamp";
       timeStampEl.innerText = moment(post.timestamp).fromNow();
-
       const feelingEl = document.createElement("div");
       feelingEl.className = "feeling";
       feelingEl.innerText = post.feeling;
-
       const postEl = document.createElement("div");
       postEl.className = "post";
       postEl.innerText = post.text;
-
       const img_element = document.createElement("img");
       img_element.src = post.image;
       img_element.alt = "cute cat";
       img_element.width = 200;
-
       postEl.append(friendEl);
       postEl.append(img_element);
       postEl.append(feelingEl);
@@ -121,10 +114,9 @@ function reload() {
     }
   }
   setTimeout(reload, 1000);
+  console.log("reload");
 }
-
 reload();
-
 function tweet() {
   const name = document.getElementById("name").value;
   const comment = document.getElementById("comment").value;
@@ -138,19 +130,15 @@ function tweet() {
   };
   bacefook.newsfeed.push(newMyPost);
   document.getElementById("comment").value = "";
-  document.getElementById("emoji").value = "happy😃";
+  document.getElementById("emoji").value = "happy:スマイリー:";
 }
-
 button.addEventListener("click", tweet);
-
 function actionToggle() {
   let darkModeCheck = document.getElementsByClassName("post");
   for (const element of darkModeCheck) {
     element.classList.toggle("dark-mode");
   }
   document.getElementsByClassName("body")[0].classList.toggle("dark-mode");
-  document.getElementsByClassName("header")[0].classList.toggle("dark-mode");
 }
-
 let saveCheckbox = document.getElementById("dark-mode");
 saveCheckbox.addEventListener("change", actionToggle);
