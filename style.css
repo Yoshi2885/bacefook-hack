@@ -6,7 +6,6 @@ body {
   background-position: left bottom;
   transition: all 0.5s;
 }
-
 body.dark-mode {
   background-color: rgb(83, 83, 83);
   color: #c8c8c8;
@@ -16,7 +15,6 @@ body.dark-mode {
   background-position: left bottom;
   transition: all 0.5s;
 }
-
 .header {
   /* ヘッダー固定 */
   position: fixed;
@@ -35,11 +33,9 @@ body.dark-mode {
   padding-left: 25px;
   transition: all 0.5s;
 }
-
 .header.dark-mode {
   background-color: #162036;
 }
-
 .headerB {
   z-index: -2;
   height: 150px;
@@ -56,7 +52,6 @@ body.dark-mode {
   padding-left: 25px;
   transition: all 0.5s;
 }
-
 .headerT {
   /* ヘッダー固定 */
   z-index: -1;
@@ -74,7 +69,6 @@ body.dark-mode {
   padding-left: 25px;
   transition: all 0.5s;
 }
-
 .main-contents {
   margin-top: 5px;
   margin-bottom: 0;
@@ -82,7 +76,6 @@ body.dark-mode {
   margin-left: auto;
   width: 300px;
 }
-
 #comment {
   width: 300px;
   text-align: center;
@@ -90,7 +83,6 @@ body.dark-mode {
   border-radius: 20px;
   border: 2px solid white;
 }
-
 #emoji {
   color: #3b5998;
   width: 150px;
@@ -99,7 +91,6 @@ body.dark-mode {
   margin-top: 5px;
   margin-left: 120px;
 }
-
 #button {
   margin-top: 15px;
   margin-left: 80px;
@@ -112,17 +103,14 @@ body.dark-mode {
   height: 40px;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
-
 #button:hover {
   background: #3b5998;
   transition: 0.4s;
 }
-
 .dark-mode-checkbox {
   display: block;
   text-align: center;
 }
-
 .post {
   background-color: rgb(251, 251, 251);
   color: black;
@@ -138,13 +126,11 @@ body.dark-mode {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
   transition: all 0.5s;
 }
-
 .dark-mode {
   background-color: rgb(46, 46, 46);
   color: aliceblue;
   transition: all 0.5s;
 }
-
 .friend {
   text-align: right;
   background: none;
@@ -152,52 +138,43 @@ body.dark-mode {
   font-weight: 600;
   transition: all 0.5s;
 }
-
 img {
   display: block;
   margin: auto;
   transition: all 0.5s;
 }
-
 .feeling {
   display: block;
   background: none;
   color: #3b5998;
   transition: all 0.5s;
 }
-
 .feeling.dark-mode {
   color: #97a8cb;
   background: none;
 }
-
 .timeStamp {
   color: gray;
   background: none;
   font-size: 50%;
   transition: all 0.5s;
 }
-
 .form {
   margin-top: 5px;
   text-align: center;
   transition: 0.5s;
 }
-
 .form-box {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
-
 #name {
   text-align: center;
   display: none;
 }
-
 .fixed_btn {
   position: fixed;
-  bottom: 10px;
   right: 50px;
   bottom: 30px;
   padding: 12px 15px;
@@ -208,11 +185,9 @@ img {
   transition: all 0.5s;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
 }
-
 .fixed_btn.dark-mode {
   background-color: #162036;
 }
-
 .go-to-top {
   display: block;
   margin: auto;
@@ -224,17 +199,14 @@ img {
   background-color: #82868e;
   transition: 0.5s;
 }
-
 .go-to-top:hover {
   cursor: pointer;
   background-color: #3b5998;
   transition: 0.5s;
 }
-
 .go-to-top.dark-mode:hover {
   background-color: #162036;
 }
-
 /* ポップアップ */
 #popup-wrapper {
   background-color: rgba(0, 0, 0, 0.5);
@@ -246,7 +218,6 @@ img {
   height: 100%;
   display: none;
 }
-
 #popup-inside {
   width: 400px;
   background-color: #ffffff85;
@@ -258,7 +229,6 @@ img {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
   border-radius: 20px;
 }
-
 #close {
   position: absolute;
   top: 5px;
@@ -266,7 +236,6 @@ img {
   cursor: pointer;
   font-size: large;
 }
-
 .dark-mode-checkbox {
   display: flex;
   z-index: 0;
@@ -281,11 +250,9 @@ img {
   cursor: pointer;
   transition: background-color 0.4s;
 }
-
 .dark-mode-checkbox:has(:checked) {
   background-color: #8c8c8c33;
 }
-
 .dark-mode-checkbox::before {
   position: absolute;
   left: 5px;
@@ -296,12 +263,10 @@ img {
   content: "";
   transition: left 0.4s;
 }
-
 .dark-mode-checkbox:has(:checked)::before {
   left: 50px;
   background-color: #8c8c8c;
 }
-
 .dark-mode-checkbox::after {
   position: absolute;
   left: 26px;
@@ -312,12 +277,99 @@ img {
   content: "💡";
   transition: left 0.4s;
 }
-
 .dark-mode-checkbox:has(:checked)::after {
   left: 71px;
   content: "🌙";
 }
-
 .dark-mode-checkbox input {
   display: none;
+}
+/* ハンバーガーメニュー */
+.hamburger {
+  top: 50px;
+  right: 30px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  /* background: #fff; */
+  position: fixed;
+  height: 20px;
+}
+.drawer_hidden {
+  display: none;
+}
+.drawer_open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 20px;
+  z-index: 100; /* 重なり順を一番上にする */
+  cursor: pointer;
+}
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+  content: "";
+  display: block;
+  height: 7px;
+  width: 47px;
+  border-radius: 3px;
+  background: #ffffff;
+  transition: 0.5s;
+  position: absolute;
+}
+.drawer_open span:before {
+  bottom: 15px;
+}
+.drawer_open span:after {
+  top: 15px;
+}
+#drawer_input:checked ~ .drawer_open span {
+  background: rgba(255, 255, 255, 0);
+}
+#drawer_input:checked ~ .drawer_open span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+#drawer_input:checked ~ .drawer_open span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+/* メニューのデザイン*/
+.nav_content {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0%;
+  left: 100%; /* メニューを画面の外に飛ばす */
+  z-index: 99;
+  background: rgba(50, 50, 50, 0.83);
+  transition: 0.5s;
+  text-align: center;
+  padding-top: 20px;
+}
+/* アイコンがクリックされたらメニューを表示 */
+#drawer_input:checked ~ .nav_content {
+  left: 0;
+}
+/* メニュー黒ポチを消す */
+.nav_list {
+  margin-top: 100px;
+  list-style: none;
+  margin-right: 35px;
+}
+.nav_name a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 100%;
+}
+.nav_img a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 100%;
 }
