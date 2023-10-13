@@ -159,7 +159,6 @@ const goToTopBtn = document.getElementById("go-to-top");
 goToTopBtn.addEventListener("click", goToTop);
 
 function changeName() {
-  console.log("clickされました");
   username = window.prompt("What is your name?");
   localStorage.setItem("username", username);
 }
